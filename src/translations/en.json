@@ -1,4 +1,6 @@
 {
-    "header": "English Header",
-    "chooseLanguage": "Choose Language English"
+    "header": "This is in English",
+    "chooseLanguage": "Choose Your Language: ",
+    "welcome": "Welcome, {name} todays date is: ",
+    "packagesNumber": "You have {packages, plural, =0 {no packages} one {# package} other {# packages}}"
 }

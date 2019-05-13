@@ -1,4 +1,6 @@
 {
-    "header": "Spanish Header",
-    "chooseLanguage": "Choose Language Spanish"
+    "header": "Esto es español",
+    "chooseLanguage": "Elige lengua",
+    "welcome": "Bienvenido, {name} la fecha de hoy es: ",
+    "packagesNumber": "Tienes {packages, plural, =0 {sin paquetes} one {# paquete} other {# paquetes}}"
 }
