@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { IntlProvider } from 'react-intl';
 import './App.css';
+import Details from './components/Details';
+import Header from './components/Header'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const en = require('./translations/en.json')
+const es = require('./translations/es.json')
+
+//by setting a key= to the locale in the IntlProvider will ensure React re-renders component when locale changes
+//should get and set locale from/to redux store
+class App extends Component {
+  render() {
+    let messages;
+    if(this.props.locale === "en") {
+      messages = en;
+    } else if(this.props.locale === "es") {
+      messages = es;
+    }
+    return (
+      <IntlProvider locale={this.props.locale} key={this.props.locale} messages={messages}>
+        <div className="App">
+          <Header/>
+          <Details/>
+        </div>
+      </IntlProvider>
+    );
+  }
 }
 
-export default App;
+let mapStateToProps = (state) => {
+  return {
+    locale: state.locale
+  }
+}
+
+export default connect(mapStateToProps, null)(App);
