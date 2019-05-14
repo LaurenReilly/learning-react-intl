@@ -8,8 +8,8 @@ import Header from './components/Header'
 const en = require('./translations/en.json')
 const es = require('./translations/es.json')
 
-//by setting a key= to the locale in the IntlProvider will ensure React re-renders component when locale changes
-//should get and set locale from/to redux store
+// by setting a key = to the locale in the IntlProvider will ensure React re-renders component when locale changes
+// should get and set locale from/to redux store and potentially also from local storage so users preferences are saved
 class App extends Component {
   render() {
     let messages;
